@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    padding: 5%;
+    height: 100vh;
+    width: 100vw;
+  background: linear-gradient(
+    109.6deg,
+    rgb(79, 3, 155) 11.2%,
+    rgba(2, 0, 4, 1) 91.1%
+  );
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Main Section Design */
+#main-area {
+    position: relative;
+    border: 5px solid #FF643C;
+    padding: 2%;
+    border-radius: 25px;
+    height: 70vh;
+    width: 40vw;
+    background-color: white;
+}
+
+/* Design Heading Section */
+#sec-heading{
+
+    height: 5%;
+    font-size: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #103173;
+    letter-spacing: 2px;
+}
+#sec-heading img{
+    margin-left: 3%;
+    height: 30px ;
+    width: 30px;
+}
+
+/* Task Add Section */
+#add-task-area{
+    position: relative;;
+    display: flex;
+    height: 5%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 6%;
+    width: 100%;
+}
+#task-text{
+    position: absolute;
+    outline: none;
+    left: 5%;
+    width: 75%;
+    padding: 3%;
+    background-color: #EBECEF;
+    border: none;
+    border-radius: 25px;
+}
+#add-task{
+    cursor: pointer;
+    position: absolute;
+    right: 6%;
+    width: 20%;
+    color: white;
+    padding: 3%;
+    background-color: #f77a5b;
+    border-radius: 25px;
+    border: none;
+}
+#add-task:hover{
+    background-color: #FF643C;
+}
+
+/* Design of task show on screen */
+#show-Task{
+    position: relative;
+    margin-top: 10%;
+    height: 70%;
+    overflow-x:hidden ;
+    scroll-behavior: smooth;
+}
+#show-Task::-webkit-scrollbar{
+    display: none;
+}
+#task-list{
+    list-style: none;
+}
+.task{
+    padding: 2% 0;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    width: 100%;
+    margin:0 10% ;
+}
+.task::before{
+    cursor: pointer;
+    margin-right: 10px;
+    position: absolute;
+    content: "";
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: url(/images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+}
+.task span{
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    font-size: 15px;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: url(/images/close.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Design for checked section */
+.checked{
+    text-decoration:line-through;
+}
+.checked::before{
+    background: url(/images/checked.png);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Responsive for mobile */
+@media  screen and (max-width: 768px) {
+    body{
+        align-items: center;
+    }
+    #main-area{
+        padding: 3vh 3vw;
+        width: 90vw;
+    }
+    #sec-heading{
+        font-size: 20px;
+    }
+    #show-Task{
+        margin: 5%;
+        height: 80%;
+    }
+    #add-task{
+        right: 7%;
+    }
+
+}
